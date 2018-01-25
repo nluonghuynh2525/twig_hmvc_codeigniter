@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>   
+
+	  {% block seo %}{% endblock seo %}
+    {% block head_script %}{% endblock head_script %}	
+
+    
+  </head>
+
+  {% block body %}
+
+    {% block body_html %}
+    <body >
+ 
+    {% endblock body_html %}
+    
+      <div class="page">
+          
+  		{% block header %}{% include 'struct/body/header.html' %}{% endblock header %}
+
+  		{% block main %}{% endblock main %}
+
+  		{% block footer %}{% include 'struct/body/footer.html' %}{% endblock footer %}
+
+  		{% block foot_script %}{% endblock foot_script %}
+
+      </div> <!-- end wrap-bg -->
+
+      {% block google_analytics %}
+        
+      {% endblock google_analytics %}
+      
+    </body><!--end-body-->
+  {% endblock body %}
+</html>

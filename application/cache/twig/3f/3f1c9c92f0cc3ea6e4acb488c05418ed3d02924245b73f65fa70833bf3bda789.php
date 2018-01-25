@@ -7,16 +7,31 @@ class __TwigTemplate_8517632afa77ea1fd4098479e62f21b746dde792abc8a2d5aa40fa1d78e
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("struct/templates/template.twig", "test.twig", 1);
         $this->blocks = array(
+            'main' => array($this, 'block_main'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "struct/templates/template.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "test trong modules";
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_main($context, array $blocks = array())
+    {
+        // line 4
+        echo "
+\t<h1 class=\"test\">test trong modules</h1>
+
+";
     }
 
     public function getTemplateName()
@@ -24,9 +39,14 @@ class __TwigTemplate_8517632afa77ea1fd4098479e62f21b746dde792abc8a2d5aa40fa1d78e
         return "test.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  31 => 4,  28 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -39,6 +59,12 @@ class __TwigTemplate_8517632afa77ea1fd4098479e62f21b746dde792abc8a2d5aa40fa1d78e
 
     public function getSourceContext()
     {
-        return new Twig_Source("test trong modules", "test.twig", "E:\\xampp\\htdocs\\ci_blog2\\application\\modules\\home\\views\\test.twig");
+        return new Twig_Source("{% extends 'struct/templates/template.twig' %}
+
+{% block main %}
+
+\t<h1 class=\"test\">test trong modules</h1>
+
+{% endblock main %}", "test.twig", "E:\\xampp\\htdocs\\ci_blog2\\application\\modules\\home\\views\\test.twig");
     }
 }
