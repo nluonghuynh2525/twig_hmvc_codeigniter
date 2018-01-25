@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+{% block title %}Layout{% endblock %}
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<div id="header"></div>
+<div id="content">
+<div id="sidebar">
+<ul>
+
+<li><a href="javascript:void(0)">Portfolio</a></li>
+<li><a href="javascript:void(0)">About Us</a></li>
+<li><a href="javascript:void(0)">Contact Us</a></li>
+</ul>
+</div>
+<div id="main-content">
+{% block content %}{% endblock %}
+</div>
+<div></div>
+</div>
+<div id="footer">
+&copy;Copyright <a href="http://www.cygnusteam.com" target="">Cygnus Team</a>
+</div>
+</body>
+</html>
