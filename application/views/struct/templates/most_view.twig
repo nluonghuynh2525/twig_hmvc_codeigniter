@@ -1,0 +1,28 @@
+<aside class="aside mt-4">
+    <h3 class="text-center title_most_shared">XEM NHIỀU NHẤT</h3>
+    {% for most in most_view %}
+    <article>
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="{{base_url()}}detail/{{most.slug}}" class="thumb_article">
+                    <img src="{{base_url()}}public/static/uploads/images/{{most.image}}" alt="">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <div class="category_title mt-2"> <a href="{{base_url()}}category/{{most.slug_cat}}">{{most.name}}</a> </div>
+                <h3 class="title_inside_share">
+                    <a href="{{base_url()}}detail/{{most.slug}}">
+                        {{most.title| length > 50 ? most.title|slice(0, 50) ~ '...' : most.title}}
+                    </a>
+                </h3>
+                <div class="num_view">
+                    <img src="{{base_url()}}public/static/templates/frontend/home/images/icon_view.png" alt="">
+                    <span class="number">{{most.num_view}} view</span>
+                </div>
+                
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+    
+</aside>

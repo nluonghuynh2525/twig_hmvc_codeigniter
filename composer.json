@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=5.3.7",
-		"kenjis/codeigniter-ss-twig": "^0.2.1"
+		"kenjis/codeigniter-ss-twig": "^0.2.1",
+		"twbs/bootstrap": "4.0.0"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

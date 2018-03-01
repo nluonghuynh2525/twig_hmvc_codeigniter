@@ -1,0 +1,211 @@
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+header {
+	padding-top: 1em;
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #eaeaea;
+	.mobile_toggle {
+		div {
+			span {
+			    display: block;
+			    position: absolute;
+			    width: 22px;
+			    height: 3px;
+			    background: #ef2673;
+			    content: " ";
+			    border-radius: 2px;
+			    &:nth-child(1) {
+			    	top: 30px;
+			    }
+			    &:nth-child(2) {
+			    	top: 36px;
+			    }
+			    &:nth-child(3) {
+			    	top: 42px;
+			    }
+			}
+		}
+	}
+	.logo_link {
+	    img {
+	    	max-height: 70px;
+	    }
+	}
+}
+
+section {
+	margin-bottom: 15px;
+	// slick slide
+	.slick_slide {
+		height: 400px;
+		margin-top: 15px;
+		.slick_custom {
+			height: 400px;
+			position: relative;
+			color: $color_white;
+			.thumb_bg {				
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    background-position: center center;
+			    background-size: cover;
+			}
+			.info {
+				position: absolute;
+				background: rgba(0,0,0,0.4);
+			    bottom: 0;
+			    padding: 20px;
+			    margin-bottom: -85px;
+			    @include transitionAll(1s);
+			    &:hover {
+			    	margin-bottom: 0px;
+			    	background: #ef2673;
+
+			    }
+			    .category {
+		    	    font-size: 11px;
+				    text-transform: uppercase;
+				    font-weight: bold;
+			    }
+			    .detail {
+			    	.headline {
+		    		    font-size: 26px;
+					    font-weight: 600;
+					    margin: 0 0 10px;
+			    	}
+			    	.read_more {
+			    		text-transform: uppercase;
+					    font-size: 12px;
+					    margin: 10px 0px;
+					    display: block;
+					    color: $color_white;
+			    	}
+			    }
+			}
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	// news
+	article {
+	    padding-bottom: 15px;
+	    border-bottom: 1px solid #eaeaea;
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+		.thumb_article {
+			img {
+				width: 100%;
+			}
+		}
+		.headline {
+			font-size: 1.5em;
+			&:hover a {
+				color: #ef2673;
+			}
+		}
+		.post_content {
+		    font-size: 1.3em;
+		}
+	}
+	aside {
+		border: 1px solid #eaeaea;
+        padding: 0 10px 10px;
+        .title_most_shared {
+    	    width: 50%;
+		    margin: 0 auto;
+		    background: #ffe7f0;
+		    color: #ef2673;
+	        font-size: 12px;
+		    padding: 10px 0px;
+        }
+	    .title_inside_share {
+	    	font-size: 14px;
+	    }
+	    time {
+	    	padding: 10px 0px;
+	    	display: block;
+	    }
+	}
+	// subcribe
+	.subcribe {
+		border-top: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+		background: #f8f8f8;
+		.subcribe_detail {
+	        padding-top: 100px;
+	        padding-bottom: 100px;
+			text-align: center;
+			h3 {
+				font-size: 1.9375rem;
+				margin: 0 0 15px;
+				text-transform: uppercase;
+			}
+			.widget_subscribe {
+				width: 90%;
+				height: 58px;
+			}
+			.form_subcribe {
+				margin-top: 25px;
+			}
+			input.widget_subscribe {
+			    border: 0;
+			    padding: 13px 15px;
+			    margin: 0 0 20px;
+			    color: #222;
+			    font-size: 12px;
+			    max-width: 100%;
+			    outline: 0;
+			    background: #fff;
+			    border: 1px solid #e5e5e5;
+			    border-radius: 0;
+			    -moz-box-shadow: none;
+			    -webkit-box-shadow: none;
+			    box-shadow: none;
+			    -moz-appearance: none;
+			    -webkit-appearance: none;
+			}
+			.btn {
+			    font-size: 16px;
+			    font-weight: 600;
+			    font-family: inherit;
+			    padding: 18px 32px;
+			    margin: 0 0 3px;
+			    display: inline-block;
+			    cursor: pointer;
+			    outline: 0;
+			    color: #fff;
+			    background: #222;
+			    text-transform: uppercase;
+			    text-align: center;
+			    overflow: hidden;
+			    border: 0;
+			    border-radius: 0;
+			    -moz-box-shadow: none;
+			    -webkit-box-shadow: none;
+			    box-shadow: none;
+			    
+			}
+		}
+	}
+}
+
+footer {
+	.copyright {
+	    margin-top: 15px;
+	    padding: 50px 0px;
+	    background: #f8f8f8;
+	}
+}
+// media query

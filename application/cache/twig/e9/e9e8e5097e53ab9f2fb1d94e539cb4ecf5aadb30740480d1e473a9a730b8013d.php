@@ -11,7 +11,6 @@ class __TwigTemplate_a187bb7be5a82ab7f76e0c9fe8ee0ada6bdf98a2c4113ab24be95232543
         $this->parent = $this->loadTemplate("struct/abstract.html", "struct/form.html", 1);
         $this->blocks = array(
             'seo' => array($this, 'block_seo'),
-            'head_script' => array($this, 'block_head_script'),
         );
     }
 
@@ -31,12 +30,6 @@ class __TwigTemplate_a187bb7be5a82ab7f76e0c9fe8ee0ada6bdf98a2c4113ab24be95232543
         $this->loadTemplate("struct/head/seo.html", "struct/form.html", 3)->display($context);
     }
 
-    // line 4
-    public function block_head_script($context, array $blocks = array())
-    {
-        $this->loadTemplate("struct/head/script.html", "struct/form.html", 4)->display($context);
-    }
-
     public function getTemplateName()
     {
         return "struct/form.html";
@@ -49,7 +42,7 @@ class __TwigTemplate_a187bb7be5a82ab7f76e0c9fe8ee0ada6bdf98a2c4113ab24be95232543
 
     public function getDebugInfo()
     {
-        return array (  35 => 4,  29 => 3,  11 => 1,);
+        return array (  28 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -65,6 +58,6 @@ class __TwigTemplate_a187bb7be5a82ab7f76e0c9fe8ee0ada6bdf98a2c4113ab24be95232543
         return new Twig_Source("{% extends 'struct/abstract.html' %}
 
 {% block seo %}{% include 'struct/head/seo.html' %}{% endblock seo %}
-{% block head_script %}{% include 'struct/head/script.html' %}{% endblock head_script %}", "struct/form.html", "E:\\xampp\\htdocs\\ci_blog2\\application\\views\\struct\\form.html");
+", "struct/form.html", "E:\\xampp\\htdocs\\ci_blog2\\application\\views\\struct\\form.html");
     }
 }

@@ -1,0 +1,69 @@
+{% extends 'struct/templates/template.twig' %}
+
+{% block main %}
+	<div class="nav_head">
+     {% include 'struct/templates/nav_head.twig' %}   
+    </div>
+
+	{% include 'struct/templates/slider_head.twig' %}
+
+	<section class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-sm-12" id="news_list">
+                        
+                        {% for new in news %}
+                            
+                            <article class="list_new">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="detail/{{new.slug}}" class="thumb_article" title="{{new.title}}">
+                                            <img src="{{base_url()}}public/static/uploads/images/{{new.image}}" alt="">
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="list_new_detail mt-2">
+                                            <time class="time">
+                                                <p class=""><span class="span_category"> <a href="{{base_url()}}category/{{new.slug_cat}}">{{new.name}}</a> </span> - {{ new.date_create|date("M j, Y") }}</p>
+                                            </time>
+                                            <h3 class="headline">
+                                                <a href="detail/{{new.slug}}" title="{{new.title}}">
+                                                    {{new.title}}
+                                                </a>
+                                            </h3>
+                                            <div class="post_content">
+                                                <p>{{new.description| length > 100 ? new.description|slice(0, 100) ~ '...' : new.description}}</p>
+                                            </div>
+                                            <div class="read_more_detail float-right">
+                                                <a href="{{base_url()}}detail/{{new.slug}}">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                        {{ link_pagi|raw }}
+                        
+                        <div class="loading" style="display: none;">
+                            <div class="content">
+                                <img src={{base_url()}}public/static/loading.gif>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% include 'struct/templates/most_view.twig' %}
+                {% include 'struct/templates/category.twig' %}
+                {% include 'struct/templates/tags_right.twig' %}
+                {% include 'struct/templates/adds_home.twig' %}
+            </div>
+        </div>
+    </section>
+
+	{% include 'struct/templates/subcribe.twig' %}
+    
+{% endblock main %}

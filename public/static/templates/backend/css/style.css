@@ -1,0 +1,17 @@
+nav p.info_user {
+	margin-bottom: 0;
+	color: white;
+}
+main {
+	margin-top: 100px;
+    margin-bottom: 60px;
+}
+
+.top_button, .nav_tabs_custom, .tab-content {
+	margin-top: 20px;
+}
+
+.img_thumbs {
+	max-width: 100px;
+    height: 50px;
+}

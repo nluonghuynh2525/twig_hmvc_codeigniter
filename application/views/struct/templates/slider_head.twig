@@ -1,0 +1,26 @@
+<!-- slider -->
+        <section>
+            <div class="slick_slide">
+                {% for slide in slide_head %}
+                <div class="slick_custom">
+                    <div class="thumb_bg" style="background-image: url('{{base_url()}}public/static/uploads/images/{{slide.image}}');">
+                        
+                    </div>
+                    <div class="info">
+                        <div class="category">
+                            <h4>{{slide.name}}</h4>
+                        </div>
+                        <div class="detail">
+                            <h3 class="headline">{{slide.title| length > 80 ? slide.title|slice(0, 80) ~ '...' : slide.title}}</h3>
+                            <p>{{slide.description| length > 100 ? slide.description|slice(0, 100) ~ '...' : slide.description}}</p>
+                            <a href="{{base_url()}}detail/{{slide.slug}}" class="read_more">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- <img src="images/two.jpg"> -->
+                </div>
+                {% endfor %}
+                
+                
+            </div>
+        </section>

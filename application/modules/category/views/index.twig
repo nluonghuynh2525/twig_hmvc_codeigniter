@@ -1,0 +1,78 @@
+{% extends 'struct/templates/template.twig' %}
+
+{% block main %}
+    <div class="nav_head">
+     {% include 'struct/templates/nav_head.twig' %}   
+    </div>
+
+    {% include 'struct/templates/slider_head.twig' %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-sm-12" id="category_list">
+                        
+                        {% for cate in slug %}
+                            
+                            <article class="list_new">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="{{base_url()}}detail/{{cate.slug}}" class="thumb_article" title="{{cate.title}}">
+                                            <img src="{{base_url()}}public/static/uploads/images/{{cate.image}}" alt="">
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="list_new_detail mt-2">
+                                            <time class="time">
+                                                <p class=""><span class="span_category"> <a href="{{base_url()}}category/{{cate.slug_cat}}">{{cate.name}}</a> </span> - {{ cate.date_create|date("M j, Y") }}</p>
+                                            </time>
+                                            <h3 class="headline">
+                                                <a href="{{base_url()}}detail/{{cate.slug}}" title="{{cate.title}}">
+                                                    {{cate.title}}
+                                                </a>
+                                            </h3>
+                                            <div class="post_content">
+                                                <p>{{cate.description| length > 100 ? cate.description|slice(0, 100) ~ '...' : cate.description}}</p>
+                                            </div>
+                                            <div class="read_more_detail float-right">
+                                                <a href="{{base_url()}}detail/{{cate.slug}}">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                        
+                        <div class="pagi_custom_search text-center">
+                            {{ links|raw }}
+                        </div>
+                        
+                        <div class="loading" style="display: none;">
+                            <div class="content">
+                                <img src={{base_url()}}public/static/loading.gif>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% include 'struct/templates/most_view.twig' %}
+                {% include 'struct/templates/category.twig' %}
+                {% include 'struct/templates/adds_home.twig' %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'struct/templates/subcribe.twig' %}
+    {% block foot_script %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+        });
+    </script>
+    {% endblock foot_script %}
+{% endblock main %}

@@ -1,0 +1,65 @@
+{% extends 'struct/templates/template.twig' %}
+   
+{% block main %}
+	<div class="nav_head">
+     {% include 'struct/templates/nav_head.twig' %}   
+    </div>
+
+	{% include 'struct/templates/parallax_detail.twig' %}
+	
+	<section class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <article class="article_detail border_bottom ">
+                            <aside class="cat_link">
+                                <a href="{{base_url()}}category/{{details.slug_cat}}" class="cat_a_link">
+                                    {{details.name}}
+                                </a>
+                            </aside>
+                            <h1 class="h1">
+                                <!-- <strong>Elevate</strong> Your Listening With These <em>Top-Notch</em> Sound Systems -->
+                                {{details.title}}
+                            </h1>
+                            <aside class="post_auther">
+                                <time>{{details.date_create}}</time>
+                                <em>by</em>
+                                <span>
+                                    <a href="">{{details.full_name}}</a>
+                                </span>
+                            </aside>
+                            <div class="post_content">
+                                {{details.content|raw}}
+                            </div>
+                            
+                            <div class="tags">
+                                <strong>TAGS:</strong> 
+                                {% for tag in tags %}
+                                <a href="{{base_url()}}tag/{{tag.slug_tag}}">{{tag.name_tag}}</a>
+                                {% endfor %}
+                            </div>
+                        </article>
+                        
+                        
+                        {% include 'struct/templates/related_post.twig' %}
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% include 'struct/templates/adds_detail.twig' %}
+            </div>
+        </div>
+         
+        {% include 'struct/templates/host_post.twig' %}
+        {% include 'struct/templates/new_post.twig' %}
+    </section>
+
+
+
+	{% include 'struct/templates/subcribe.twig' %}
+
+{% endblock main %}

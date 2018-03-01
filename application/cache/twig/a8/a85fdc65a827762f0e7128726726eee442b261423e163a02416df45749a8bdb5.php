@@ -31,7 +31,7 @@ class __TwigTemplate_f104afc7639c0c4242c6c82f7987de1f3ed98ee909522279ae71b3a9495
     <meta charset=\"utf-8\"/>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" />
     <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\"/>   
-
+    
 \t  ";
         // line 8
         $this->displayBlock('seo', $context, $blocks);
@@ -168,7 +168,7 @@ class __TwigTemplate_f104afc7639c0c4242c6c82f7987de1f3ed98ee909522279ae71b3a9495
     <meta charset=\"utf-8\"/>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" />
     <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\"/>   
-
+    
 \t  {% block seo %}{% endblock seo %}
     {% block head_script %}{% endblock head_script %}\t
 

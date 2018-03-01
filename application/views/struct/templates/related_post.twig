@@ -1,0 +1,32 @@
+<article class="mt-4">
+    <div class="post_related">
+        <div class="row">
+            <div class="col-sm-12">
+                
+                    {% if(related_post) %}
+                    <h4 class="style_h4"> <strong>Tin liên quan</strong> </h4>
+                    {% endif %}
+                
+            </div>
+        </div>
+        <div class="row">
+            {% for related in related_post %}
+            <div class="col-sm-4">
+                <article>
+                    <figure>
+                        <a href="{{base_url()}}detail/{{related.slug}}">
+                            <img src="{{base_url()}}public/static/uploads/images/{{related.image}}" alt="">
+                        </a>
+                    </figure>
+                    <div class="post_title">
+                        <h6>
+                            <a href="{{base_url()}}detail/{{related.slug}}">{{related.title}}</a>
+                        </h6>
+                    </div>
+                </article>
+            </div>
+            
+            {% endfor %}
+        </div>    
+    </div>
+</article>

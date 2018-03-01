@@ -16,14 +16,14 @@ class __TwigTemplate_0c7b20338e9538e4d1c5574720f6b180b22ee5a803d2e9462cb4b43d84b
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<title>Nhat chi mai</title>
-<meta name=\"description\" content=\" mang lại cho người chơi những trãi nghiệm về  kiếm hiệp hay nhất 2017.\"/>
-<meta name=\"keywords\" content=\"luong huynh, game luong huynh, game luong game huynh, game kiếm hiệp, game kiem hiep, webgame kiếm hiệp, webgame kiem hiep, game online 2d, webgame online 2d, webgame hay, webgame mới, webgame hot, webgame 2d hay, webgame 2d mới, webgame 2d hot, webgame hay nhất 2017, chơi game 2d, chơi webgame 2d\"/>
+        echo "<title>Website News Feed | The Voux</title>
+<meta name=\"description\" content=\"The Voux is website show news feed all the world.\"/>
+<meta name=\"keywords\" content=\"the voux, voux, news, the world, news feed, football, sport, clothes.\"/>
 
-<meta property=\"og:title\" content=\"Nhat chi mai\" />\t
-<meta property=\"og:description\" content=\"Nhat chi mai\" />
+<meta property=\"og:title\" content=\"The Voux\" />\t
+<meta property=\"og:description\" content=\"The Voux\" />
 
-<meta property=\"og:image\" content=\"/public/static/uploads/hanglongphucho.jpg\" />
+<meta property=\"og:image\" content=\"/public/static/uploads/thefoux.jpg\" />
 <meta property=\"og:image:type\" content=\"image/jpeg\" />
 
 <meta property=\"og:url\" content=\"current_url\" />
@@ -51,14 +51,14 @@ class __TwigTemplate_0c7b20338e9538e4d1c5574720f6b180b22ee5a803d2e9462cb4b43d84b
 
     public function getSourceContext()
     {
-        return new Twig_Source("<title>Nhat chi mai</title>
-<meta name=\"description\" content=\" mang lại cho người chơi những trãi nghiệm về  kiếm hiệp hay nhất 2017.\"/>
-<meta name=\"keywords\" content=\"luong huynh, game luong huynh, game luong game huynh, game kiếm hiệp, game kiem hiep, webgame kiếm hiệp, webgame kiem hiep, game online 2d, webgame online 2d, webgame hay, webgame mới, webgame hot, webgame 2d hay, webgame 2d mới, webgame 2d hot, webgame hay nhất 2017, chơi game 2d, chơi webgame 2d\"/>
+        return new Twig_Source("<title>Website News Feed | The Voux</title>
+<meta name=\"description\" content=\"The Voux is website show news feed all the world.\"/>
+<meta name=\"keywords\" content=\"the voux, voux, news, the world, news feed, football, sport, clothes.\"/>
 
-<meta property=\"og:title\" content=\"Nhat chi mai\" />\t
-<meta property=\"og:description\" content=\"Nhat chi mai\" />
+<meta property=\"og:title\" content=\"The Voux\" />\t
+<meta property=\"og:description\" content=\"The Voux\" />
 
-<meta property=\"og:image\" content=\"/public/static/uploads/hanglongphucho.jpg\" />
+<meta property=\"og:image\" content=\"/public/static/uploads/thefoux.jpg\" />
 <meta property=\"og:image:type\" content=\"image/jpeg\" />
 
 <meta property=\"og:url\" content=\"current_url\" />

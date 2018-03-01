@@ -1,0 +1,25 @@
+<section class="host_post">
+    <h4 class="style_h4"> <strong>Tin nổi bật</strong> </h4>
+    <div class="slick_slide_bottom">
+        {% for slide in slide_bottom %}
+        <div class="slick_custom">
+            <a href="{{base_url()}}detail/{{slide.slug}}">
+                <img src="{{base_url()}}public/static/uploads/images/{{slide.image}}" alt="{{slide.title}}"" title="{{slide.title}}">
+            </a>
+            <div class="info">
+               
+                <div class="detail">
+                    <a href="{{base_url()}}public/static/uploads/images/{{slide.image}}"><h3 class="headline">{{slide.title| length > 80 ? slide.title|slice(0, 80) ~ '...' : slide.title}}</h3></a>
+                    <div class="num_view">
+                        <img src="http://localhost/ci_blog2/public/static/templates/frontend/home/images/icon_view.png" alt="">
+                        <span class="number">{{slide.num_view}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+        
+        
+    </div>
+</section>

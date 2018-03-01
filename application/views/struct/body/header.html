@@ -1,2 +1,32 @@
-<!-- menu header -->
-menu header
+<!-- header -->
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="mobile_toggle">
+                            <a href="">
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 text-center">
+                        <a href="{{base_url()}}" class="logo_link">
+                            <img src="{{base_url()}}public/static/templates/frontend/home/images/hyn.png" alt="">
+                        </a>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search text-center">
+                            <form action="{{base_url()}}search" method="get">
+                                <input type="text" name="keyword" class="search_input" placeholder="Tìm kiếm" >
+                                <input type="submit" class="btn_search">
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div>
+        </header>
