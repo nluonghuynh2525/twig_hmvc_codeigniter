@@ -56,7 +56,9 @@ class News_model extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    
+    public function add_new_tag() {
+
+    }
 
 	public function add_news() {
 		$this->load->helper(array('url', 'slug_helper'));
@@ -80,10 +82,36 @@ class News_model extends CI_Model {
             'date_update' => $date_current
 	    );
 
-	    return $this->db->insert($this->table, $data);
+        $this->db->insert($this->table, $data);
+        $insert_id = $this->db->insert_id();
+
+        // add new_tag table
+        $target = $this->input->post('tags');
+        if(!empty($target)) {
+            foreach($target as  $value){
+                // echo $value;
+                $data_tag = array(
+                    'tag_id' => $value,
+                    'new_id' => $insert_id,
+                    'date_create' => $date_current,
+                    'date_update' => $date_current
+                );
+                $this->db->insert('new_tag', $data_tag);
+            }
+        }
+	    return true;
+
 	}
 
+    public function delete_new_tag($new_id) {
+        $this->db->where('new_id', $new_id);
+        $this->db->delete('new_tag');
+    }
+
     public function update_news($id) {
+        $dt = new DateTime();
+        $date_current = $dt->format('Y-m-d H:i:s');
+
         $this->load->helper(array('url', 'slug_helper'));
 
         $slug= create_slug($this->input->post('title'));
@@ -102,7 +130,27 @@ class News_model extends CI_Model {
             'is_slide_head' => $this->input->post('is_slider')
         );
         $this->db->where('id', $id);
-        return $this->db->update($this->table, $data);
+        $this->db->update($this->table, $data);
+
+        // update new_tag table
+        $target = $this->input->post('tags');
+
+        // if(!empty($target)) {
+        //delete new_tag with id
+        $this->delete_new_tag($id);
+
+            foreach($target as  $value){
+                $data_tag = array(
+                    'tag_id' => $value,
+                    'new_id' => $id,
+                    'date_create' => $date_current,
+                    'date_update' => $date_current
+                );
+                $this->db->insert('new_tag', $data_tag);
+            }
+        // }
+
+        return true;
     }
 
     public function delete_news($id) {
@@ -113,9 +161,12 @@ class News_model extends CI_Model {
 
     public function get_news_detail($id) {
         
-        $this->db->select('n.title, n.description, n.content, n.active, n.is_slide_head, n.image, c.id as cat_id, c.name');
-        $this->db->from($this->table.' n'); 
-        $this->db->join('categories c', 'c.id=n.cat_id');
+        $this->db->select('n.id as nid, n.title, n.description, n.content, n.active, n.is_slide_head, n.image, c.id as cat_id, c.name, nt.tag_id, nt.new_id, t.name_tag ');
+
+        $this->db->join('categories c', 'c.id=n.cat_id', 'left');
+        $this->db->from($this->table.' n', 'left');
+        $this->db->join('new_tag nt', 'nt.new_id=n.id', 'left');
+        $this->db->join('tags t', 't.id=nt.tag_id', 'left');
         $this->db->where('n.id',$id);
                
         $query = $this->db->get(); 

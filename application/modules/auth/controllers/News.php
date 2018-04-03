@@ -12,7 +12,7 @@ class News extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('news_model');
+		$this->load->model('tags_model');
         $this->load->model('news_model','news');
 		$this->load->model('categories_model','categories');
 
@@ -82,14 +82,15 @@ class News extends CI_Controller {
         $this->form_validation->set_rules('description', 'Description', 'required');
 
         $data['categorys'] = $this->categories->get_category();
-        
+        $data['tags'] = $this->tags_model->get_all_tag();
         if ($this->form_validation->run() === FALSE) {
             
             $this->load->view('news/edit', $data);
         }
         else
         {
-            $this->news_model->add_news();
+
+            $this->news->add_news();
             redirect('auth/news/index');
         }
 	}
@@ -108,13 +109,14 @@ class News extends CI_Controller {
 
         $data['categorys'] = $this->categories->get_category();
         $data['info_detail'] = $this->news->get_news_detail($id);
+        $data['tags'] = $this->tags_model->get_all_tag();
         
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('news/edit', $data);
         }
         else
         {
-            $this->news_model->update_news($id);
+            $this->news->update_news($id);
             redirect('auth/news/index');
         }
     }
@@ -124,7 +126,7 @@ class News extends CI_Controller {
             redirect('auth');
         }
 
-        $this->news_model->delete_news($id);
+        $this->news->delete_news($id);
         redirect('auth/news/index');
         
     }

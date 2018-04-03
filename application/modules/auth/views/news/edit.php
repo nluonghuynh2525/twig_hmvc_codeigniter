@@ -45,7 +45,15 @@
                                     </option>
                                 <?php }?>
                             </select>
-                            
+
+                            <label for="content">Tags</label>
+                            <select id="tagss" class="form-control select2_tags" name="tags[]" multiple="multiple">
+                                <?php foreach($tags as $tag) {?>
+                                    <option value="<?php echo $tag['id']; ?>" <?php if( isset($info_detail['new_id']) && $info_detail['new_id'] == $tag['new_id'] ) echo 'selected'; ?> >
+                                            <?php echo $tag['name_tag']; ?>
+                                    </option>
+                                <?php }?>
+                            </select>
                             
                         </div>
 
@@ -130,5 +138,10 @@
         function ConfirmDelete() {
             return confirm("Are you sure you want to delete?");
         }
+
+        // select2
+        $(document).ready(function() {
+            $('.select2_tags').select2();
+        });
     </script>
 <?php $this->load->view('templates/backend/footer'); ?>

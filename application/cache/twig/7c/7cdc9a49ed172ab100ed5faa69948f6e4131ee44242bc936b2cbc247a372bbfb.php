@@ -165,7 +165,7 @@ class __TwigTemplate_f7d1d5827e99e42ee0d48e13ee1ecc9d8cf05c62ed830019efed0ab5c85
     </script>
     <script type=\"text/javascript\">
         \$(document).ready(function(){
-          \$(\".sidebar\").stick_in_parent();
+          \$(\".aside\").stick_in_parent();
         });
 
         // Xử lý Go Top
@@ -321,7 +321,7 @@ class __TwigTemplate_f7d1d5827e99e42ee0d48e13ee1ecc9d8cf05c62ed830019efed0ab5c85
     </script>
     <script type=\"text/javascript\">
         \$(document).ready(function(){
-          \$(\".sidebar\").stick_in_parent();
+          \$(\".aside\").stick_in_parent();
         });
 
         // Xử lý Go Top

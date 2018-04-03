@@ -121,5 +121,21 @@ class Tags_model extends CI_Model {
         }
     }
 
+    public function get_all_tag() {
+        $this->db->select('t.id, t.name_tag, t.slug_tag, nt.new_id');
+        $this->db->from($this->table.' t'); 
+        $this->db->join('new_tag nt', 'nt.tag_id=t.id', 'left');
+
+        // $this->db->group_by('nt.tag_id');
+        $query = $this->db->get(); 
+
+        if($query->num_rows() != 0) {
+            return $query->result_array();
+        }else {
+            return false;
+        }
+        
+    }
+
     
 }
